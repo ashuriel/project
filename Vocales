@@ -1,0 +1,17 @@
+
+
+vocales=['a','A','e','E','i','I','o','O','u','U']
+
+nombre=input('Ingresa el nombre:')
+count=0
+
+
+
+
+for item in nombre:
+    if item in vocales:
+        count+=1
+if count>3:
+    print('El nombre',nombre,'tiene',count,'vocales.')
+else:
+    print('El nombre ingresado no tienes mas de 3 vocales')
