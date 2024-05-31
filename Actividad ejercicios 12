@@ -1,0 +1,33 @@
+num1=int(input('Ingresa el primer numero:'))
+num2=int(input('Ingresa el segundo numero:'))
+
+resultado= num1-num2
+suma_de_los_digitos=0
+
+
+def suma_digitos(resultado):
+    return sum(int(digito) for digito in str(resultado))
+
+
+def mostrar_digitos_separados(resultado):
+    return ' '.join(digito for digito in str(resultado))
+
+
+if resultado%2==0:
+    suma = suma_digitos(num1) + suma_digitos(num2)
+    print(f"La suma de los dígitos de los números es: {suma}")
+else:
+    print('La diferencia de dos numero no es un numero par.')
+
+
+
+if resultado%2>0 and resultado<10:
+    print(num1*num2)
+else:
+    print('La diferencia de dos numero no es un numero primo\nO este numero primo es mayor de 10')
+
+if str(resultado).endswith('4'):
+    digitos_num1 = mostrar_digitos_separados(num1)
+    digitos_num2 = mostrar_digitos_separados(num2)
+    print(f"Los dígitos de {num1} por separado son: {digitos_num1}")
+    print(f"Los dígitos de {num2} por separado son: {digitos_num2}")
