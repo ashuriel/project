@@ -4,9 +4,7 @@ num2=int(input('Ingresa el segundo numero:'))
 
 resultado= abs(num1-num2)
 
-if 10<num1>99 or 10<num2>99 or num1==0 or num2==0:
-    quit('--------------------\nUno o los dos numero ingresado no es de dos digitos.\n--------------------')
-elif -99<num1>-10 or -99<num2>-10:
+if num1<10 or num1>99 or num2<10 or num2>99 or num1 and num2==0:
     quit('--------------------\nUno o los dos numero ingresado no es de dos digitos.\n--------------------')
 else:
     print('--------------------------')
