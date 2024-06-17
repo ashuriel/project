@@ -1,0 +1,309 @@
+import time
+
+def raya():
+    print('\n-------------------------------------------------------------------------------------')
+#tiempo
+countdown_time=5
+def contar(count_time):
+      
+    for i in range(count_time, 0, -1):
+        print(f'\rLa siguiente pregunta viene en:{i}',end='')
+        time.sleep(1)
+
+    return(count_time )
+
+#mensaje
+def correcto(mensaje):
+    global p 
+    p += 1
+    print(mensaje)
+
+def incorrecto(mensaje1):
+    global p
+    p -= 1
+    print(mensaje1)
+
+print('Bienvenidos a mi programa de concursos sin premios!\nEstas listos para empezar?')
+
+
+#variable y listas
+r=['a','b','c','d']
+rs=['v','f']
+x=0
+p=0
+
+#entrada
+while x==0:
+    y=input('Si/No:\n')
+    y=y.lower()
+    if y=='si':
+        print('Ok, vamos a empezar!')
+        x+=1
+    elif y=='no':
+        print('A mi no importa, vamos a empezar!')
+        x=1
+    else:
+        print('No entiendo tu decision...')
+
+#entrada 2
+for i in range(countdown_time, 0, -1):
+    print(i)
+    time.sleep(1)
+
+#ejercicio 1
+raya()
+r1=input('El resultado de 12*12 es?\n[A]:140\n[B]:142\n[C]:144\n[D]:164\nSelecciona tus respuesta:')
+r1=r1.lower()
+if r1 in r:
+    
+    if r1=='c':
+        raya()
+        correcto('Genial!    +1 punto.')
+        raya()
+        
+    elif r1=='b' or r1=='a' or r1=='d':
+        raya()
+        incorrecto('Incorrecto!    -1 punto.\n    (Eso no deberia pasar...)')
+        raya()
+        
+else:
+    raya()
+    incorrecto('No entiendo tus respuesta...    -1 punto.')
+    raya()
+    
+
+contar(5)
+
+#ejercicio 2
+raya()
+r2=input('El resultado de 14-8*5 es?\n[A]:-26\n[B]:-36\n[C]:30\n[D]:36\nSelecciona tus respuesta:')
+r2=r2.lower()
+if r2 in r:
+    if r2=='a':
+        raya()
+        correcto('Genial!    +1 punto.')
+        raya()
+    elif r2=='b' or r2=='c' or r2=='d':
+        raya()
+        incorrecto('Incorrecto!    -1 punto\n    (En serio...?)')
+        raya()
+else:
+    raya()
+    incorrecto('No entiendo tus respuesta...   -1 punto.')
+    raya()
+
+contar(5)
+
+#ejercicio 3
+raya()
+r3=input("Cuantas letras tiene la palabra 'anticonstitucionalmente'?\n[A]:21\n[B]:22\n[C]:23\n[D]:24\nSelecciona tus respuesta:")
+r3=r3.lower()
+if r3 in r:
+    if r3=='c':
+        raya()
+        correcto('Muy bien!    +1 punto.')
+        raya()
+    elif r3=='a' or r3=='b' or r3=='d':
+        raya()
+        incorrecto('Incorrecto!    -1 punto.\n    (Necesitas lente?...)')
+        raya()
+else:
+    raya()
+    incorrecto('No entiendo tus respuesta...   -1 punto.')
+    raya()
+
+contar(5)
+
+#ejercicio 4
+raya()
+r4=input('Pregunta: ¿Cuál de las siguientes oraciones contiene un error gramatical o de uso de frases?\n[A]:Fuimos al cine y luego a cenar.\n[B]:El niño tiene sueño y quiere ir a dormir.\n[C]:Mi amiga vino a verme para que la ayudara con su tarea.\n[D]:Habían muchas personas en la fiesta.\nSelecciona tus respuestas:')
+r4=r4.lower()
+if r4 in r:
+    if r4 =='d':
+        raya()
+        correcto('Excelente!    +1 punto.')
+        raya()
+    elif r4=='a' or r4== 'b' or r4=='c':
+        raya()
+        incorrecto('\nIncorrecto!    -1 punto.\n    (No hablas español...?)')
+        raya()
+else:
+    raya()
+    incorrecto('No entiendo tus respuesta...   -1 punto.')
+    raya()
+
+contar(5)
+
+#ejercicio 5
+
+raya()
+r5=input('El resultado de 98+88.88*88.88+(98*88.88) es?\n[A]:16,896.89\n[B]:16,707.89\n[C]:14,788.45\n[D]:17,889.89\nSelecciona tus respuestas:')
+r5=r5.lower()
+if r5 in r:
+    if r5 =='b':
+        raya()
+        correcto('WOW!    +1 punto.')
+        raya()
+    elif r5=='a' or r5=='c' or r5=='d':
+        raya()
+        incorrecto('Incorrecto!    -1 punto.\n    (¿Eres demasiado vago para usar una calculadora?)')
+        raya()
+else:
+    raya()
+    incorrecto('No entiendo tus respuesta...   -1 punto.')
+    raya()
+
+contar(5)
+
+#ejercicio 6
+
+raya()
+r6=input('¿Cuál es el dígito en la posición trescientos nueve después del punto decimal de pi?\n[A]:4\n[B]:8\n[C]:6\n[D]:1\nSelecciona tus respuesta:')
+r6=r6.lower()
+if r6 in r:
+    if r6=='a':
+        raya()
+        correcto('¿Qué navegadores web estás usando?    +1 punto.')
+        raya()
+    elif r6=='b' or r6=='c' or r6 =='d':
+        raya()
+        incorrecto('Incorrecto!    -1 punto.\n    (¿Ahora eres vago de usar navegadores web...?)')
+        raya()
+else:
+    raya()
+    incorrecto('No entiendo tus respuesta...   -1 punto.')
+    raya()
+
+contar(5)
+
+#ejercicio 7
+raya()
+r7=input('La Segunda Guerra Mundial comenzó el 1 de septiembre de 1938.\n[V]:falso\n[F]:verdadero\nSelecciona tus respuesta:')
+r7=r7.lower()
+if r7 in rs:
+    if r7=='v':
+        raya()
+        correcto('Bien!    +1 punto.')
+        raya()
+    elif r7=='f':
+        raya()
+        incorrecto('Incorrecto!    -1 punto.\n    (Leas bien por favor.)')
+        raya()
+else:
+    raya()
+    incorrecto('No entiendo tus respuesta...   -1 punto.')
+    raya()
+
+contar(5)
+
+#ejercicio 8
+raya()
+r8=input('¿Qué causó la extinción de los dinosaurios? Por favor, selecciona las opciones más razonables.\n[A]:Impacto de un asteroide en la Tierra\n[B]:Erupciones volcánicas masivas\n[C]:Invasiones alienígenas\n[D]:Cambio climático que causó escasez de alimentos\nSelecciona tus respuestas:')
+r8=r8.lower()
+if r8 in r:
+    if r8 =='a' or r8 =='b':
+        raya()
+        correcto('Sigue asi!    +1 punto.')
+        raya()
+    elif r8=='c':
+        raya()
+        incorrecto('Incorrecto!    -1 punto.\n    (La invasion de tu locura.)')
+        raya()
+    elif r8 =='d':
+        raya()
+        incorrecto('Incorrecto!    -1 punto.\n    (Puede ser, pero nunca.)')
+        raya()
+else:
+    raya()
+    incorrecto('No entiendo tus respuesta...   -1 punto.')
+    raya()
+
+contar(5)
+
+#ejercicio 9
+raya()
+r9=input('Hay una enfermedad ficticia que supuestamente es causada por la inhalación de cenizas y polvo muy finos, ¿sabes cuál es?\n[A]:Silicosis volcánica\n[B]:Enfermedad pulmonar ultramicroscópica del polvo volcánico silíceo\n[C]:Pneumonoultramicros\n[D]:Pneumonoultramicroscopicsilicovolcanoconiosis\nSelecciona tus respuesta:')
+r9=r9.lower()
+if r9 in r:
+    if r9=='d':
+        raya()
+        correcto('Sabes mucho...    +1 punto.')
+        raya()
+    elif r9=='a' or r9=='b':
+        raya()
+        incorrecto('Incorrecto!   -1 punto.\n    (A veces, las cosas obvio no son obvio.)')
+        raya()
+    elif r9=='c':
+        raya()
+        incorrecto('Incorrecto!    -1 punto.\n    (No te asuste por longitudes...)')
+        raya()
+else:
+    raya()
+    incorrecto('No entiendo tus respuesta...   -1 punto.')
+    raya()
+
+contar(5)
+
+#ejercicio 10
+raya()
+r10=input('是谁发现了万有引力的定律?\n[A]:Galileo Galilei\n[B]:Issac Newton\n[C]:Albert Einstein\n[D]:¿Qué diablo estás hablando?\nSelecciona tus respuesta:')
+r10=r10.lower()
+if r10 in r:
+    if r10=='b':
+        raya()
+        correcto('真棒！    +1 punto.')
+        raya()
+    elif r10=='d':
+        raya()
+        incorrecto('Incorrecto!    -1 punto.\n    (Chino.)')
+        raya()
+    elif r10=='a' or r10=='c':
+        raya()
+        incorrecto('Incorrecto!    -1 punto.\n    (A veces, aprendete una nueva idioma es un beneficio.)')
+        raya()
+else:
+    raya()
+    incorrecto('No entiendo tus respuesta...   -1 punto.')
+    raya()
+
+contar(5)
+
+#ejercicio 11
+raya()
+r11=input('-.-. ..- .- -. - .- ... -.. .. .- ... - .. . -. . ..- -. .- ... . -- .- -. .-\n[A]:-.-. .. -. -.-. ---\n[B]:--- -.-. .... ---\n[C]:... .. . - .\n[D]:... . .. ...\nSelecciona tus respuesta:')
+r11=r11.lower()
+if r11 in r:
+    if r11=='c':
+        raya()
+        correcto('. -..- -.-. . .-.. . -. - .    +1 puntos.')
+        raya()
+    elif r11=='a' or r11=='b' or r11=='d':
+        raya()
+        incorrecto('.. -. -.-. --- .-. .-. . -.-. - ---    -1 punto.\n    (JijiJajaJiji)')
+        raya()
+else:
+    raya()
+    incorrecto('No entiendo tus respuesta...   -1 punto.')
+    raya()
+
+contar(5)
+
+raya()
+print(f'Ya no hay mas ejercicios!\nTus punto:{p}')
+raya()
+
+if p==11:
+    print('Felicidades, tramposo.')
+elif p>7:
+    print('Wow, eres un genio.')
+elif p<7 and p>4:
+    print('Bien hecho!')
+elif p>-1 and p<4:
+    print('Necesitas mas esfuerzo.')
+elif p<-1:
+    print('Vaya para estudio liberales.')
+
+raya()
+print('Veremos de luego!')
+raya()
+
