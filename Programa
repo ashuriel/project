@@ -1,4 +1,5 @@
 import time
+import random
 
 def raya():
     print('\n-------------------------------------------------------------------------------------')
@@ -31,10 +32,51 @@ r=['a','b','c','d']
 rs=['v','f']
 x=0
 p=0
+palabras=["Anticonstitucionalidad",
+    "Anticonstitucionalmente",
+    "Electroencefalografista",
+    "Electroencefalografía",
+    "Electroencefalográfico",
+    "Antihistamínicamente",
+    "Paralelepipédicamente",
+    "Antropomorfizadamente",
+    "Contrarrevolucionario",
+    "Internacionalización",
+    "Desoxirribonucleico",
+    "Inconstitucionalidad",
+    "Inconstitucionalmente",
+    "Anticonceptivo",
+    "Esternocleidomastoideo",
+    "Hematoporfirinometría",
+    "Otorrinolaringología",
+    "Otorrinolaringológico",
+    "Desoxirribonucleótido",
+    "Electrocardiografista",
+    "Electroencefalograma",
+    "Fotosintetizadamente",
+    "Interdisciplinariedad",
+    "Radioinmunoelectroforesis",
+    "Hemoglobinopáticamente",
+    "Circunlocucionadamente",
+    "Cardiotoracovascular",
+    "Fenomenológicamente"
+]
+
+palabrasrandom=random.choice(palabras)
+cantidaddeletras=len(palabrasrandom)
+
+
+#ejercicios
+numerorandom=random.randint(12,36)
+resultadorandom=numerorandom*numerorandom
+
+numerorandom2=random.randint(12,24)
+numerorandom3=random.randint(1,1000)
+resultadorandom2=float((numerorandom2+numerorandom3)/numerorandom)
 
 #entrada
 while x==0:
-    y=input('Si/No:\n')
+    y=str(input('Si/No:\n'))
     y=y.lower()
     if y=='si':
         print('Ok, vamos a empezar!')
@@ -52,7 +94,7 @@ for i in range(countdown_time, 0, -1):
 
 #ejercicio 1
 raya()
-r1=input('El resultado de 12*12 es?\n[A]:140\n[B]:142\n[C]:144\n[D]:164\nSelecciona tus respuesta:')
+r1=input(f'El resultado de {numerorandom}*{numerorandom} es?\n[A]:{resultadorandom+2}\n[B]:{resultadorandom+2}\n[C]:{resultadorandom}\n[D]:{resultadorandom+20}\nSelecciona tus respuesta:')
 r1=r1.lower()
 if r1 in r:
     
@@ -76,7 +118,7 @@ contar(5)
 
 #ejercicio 2
 raya()
-r2=input('El resultado de 14-8*5 es?\n[A]:-26\n[B]:-36\n[C]:30\n[D]:36\nSelecciona tus respuesta:')
+r2=input(f'El resultado de ({numerorandom2}+{numerorandom3})/{numerorandom} es?\n[A]:{resultadorandom2}\n[B]:{resultadorandom2+1}\n[C]:{resultadorandom2-1}\n[D]:{resultadorandom2/2}\nSelecciona tus respuesta:')
 r2=r2.lower()
 if r2 in r:
     if r2=='a':
@@ -96,7 +138,7 @@ contar(5)
 
 #ejercicio 3
 raya()
-r3=input("Cuantas letras tiene la palabra 'anticonstitucionalmente'?\n[A]:21\n[B]:22\n[C]:23\n[D]:24\nSelecciona tus respuesta:")
+r3=input(f"Cuantas letras tiene la palabra '{palabrasrandom}'?\n[A]:{cantidaddeletras+1}\n[B]:{cantidaddeletras-1}\n[C]:{cantidaddeletras}\n[D]:{cantidaddeletras+2}\nSelecciona tus respuesta:")
 r3=r3.lower()
 if r3 in r:
     if r3=='c':
