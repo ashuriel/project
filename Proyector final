@@ -1,0 +1,559 @@
+import time
+import random
+
+def raya():
+    print('\n-------------------------------------------------------------------------------------')
+#tiempo
+countdown_time=5
+def contar(count_time):
+      
+    for i in range(count_time, 0, -1):
+        print(f'\rLa siguiente pregunta viene en:{i}',end='')
+        time.sleep(1)
+
+    return(count_time )
+
+#mensaje
+def correcto(mensaje):
+    global p 
+    p += 1
+    print(mensaje)
+
+def incorrecto(mensaje1):
+    global p
+    p -= 1
+    print(mensaje1)
+
+print('Bienvenidos a mi programa de concursos sin premios!\nEstas listos para empezar?')
+
+
+#variable y listas
+r=['a','b','c','d']
+rs=['v','f']
+x=0
+p=0
+palabras=["Anticonstitucionalidad",
+    "Anticonstitucionalmente",
+    "Electroencefalografista",
+    "Electroencefalografía",
+    "Electroencefalográfico",
+    "Antihistamínicamente",
+    "Paralelepipédicamente",
+    "Antropomorfizadamente",
+    "Contrarrevolucionario",
+    "Internacionalización",
+    "Desoxirribonucleico",
+    "Inconstitucionalidad",
+    "Inconstitucionalmente",
+    "Anticonceptivo",
+    "Esternocleidomastoideo",
+    "Hematoporfirinometría",
+    "Otorrinolaringología",
+    "Otorrinolaringológico",
+    "Desoxirribonucleótido",
+    "Electrocardiografista",
+    "Electroencefalograma",
+    "Fotosintetizadamente",
+    "Interdisciplinariedad",
+    "Radioinmunoelectroforesis",
+    "Hemoglobinopáticamente",
+    "Circunlocucionadamente",
+    "Cardiotoracovascular",
+    "Fenomenológicamente"
+]
+
+
+
+
+
+
+#los randoms
+numerorandom=random.randint(12,36)
+resultadorandom=numerorandom*numerorandom
+
+
+
+
+#ejercicios random
+
+
+#entrada
+while x==0:
+    y=str(input('Si/No:\n'))
+    y=y.lower()
+    if y=='si':
+        print('Ok, vamos a empezar!')
+        x+=1
+    elif y=='no':
+        print('A mi no importa, vamos a empezar!')
+        x=1
+    else:
+        print('No entiendo tu decision...')
+
+#entrada 2
+for i in range(countdown_time, 0, -1):
+    print(i)
+    time.sleep(1)
+
+#ejercicio 1
+respuesta1=[
+    resultadorandom+2,
+    resultadorandom+1,
+    resultadorandom,
+    resultadorandom-1
+]
+
+random.shuffle(respuesta1)
+raya()
+r1=input(f'El resultado de {numerorandom}*{numerorandom} es?\n[A]:{respuesta1[0]}\n[B]:{respuesta1[1]}\n[C]:{respuesta1[2]}\n[D]:{respuesta1[3]}\nSelecciona tus respuesta:')
+r1=r1.lower()
+if r1 in r:
+    
+    if r1==r[respuesta1.index(resultadorandom)]:
+        raya()
+        correcto('Genial!    +1 punto.')
+        raya()
+        
+    elif r1==r[respuesta1.index(resultadorandom+1)] or r1==r[respuesta1.index(resultadorandom+2)] or r1==r[respuesta1.index(resultadorandom-1)]:
+        raya()
+        incorrecto('Incorrecto!    -1 punto.\n    (Eso no deberia pasar...)')
+        raya()
+        
+else:
+    raya()
+    incorrecto('No entiendo tus respuesta...    -1 punto.')
+    raya()
+    
+
+contar(5)
+
+#ejercicio 2
+numerorandom2=random.randint(12,24)
+numerorandom3=random.randint(1,1000)
+resultadorandom2=float((numerorandom2+numerorandom3)/numerorandom)
+respuesta2=[resultadorandom2,
+            resultadorandom2+1,
+            resultadorandom2-1,
+            resultadorandom2/2]
+random.shuffle(respuesta2)
+raya()
+r2=input(f'El resultado de ({numerorandom2}+{numerorandom3})/{numerorandom} es?\n[A]:{respuesta2[0]}\n[B]:{respuesta2[1]}\n[C]:{respuesta2[2]}\n[D]:{respuesta2[3]}\nSelecciona tus respuesta:')
+r2=r2.lower()
+if r2 in r:
+    if r2==r[respuesta2.index(resultadorandom2)]:
+        raya()
+        correcto('Genial!    +1 punto.')
+        raya()
+    elif r2==r[respuesta2.index(resultadorandom2+1)] or r2==r[respuesta2.index(resultadorandom2-1)] or r2==r[respuesta2.index(resultadorandom2/2)]:
+        raya()
+        incorrecto('Incorrecto!    -1 punto\n    (En serio...?)')
+        raya()
+else:
+    raya()
+    incorrecto('No entiendo tus respuesta...   -1 punto.')
+    raya()
+
+contar(5)
+
+#ejercicio 3
+palabrasrandom=random.choice(palabras)
+cantidaddeletras=len(palabrasrandom)
+respuesta3=[
+    cantidaddeletras,
+    cantidaddeletras+1,
+    cantidaddeletras-1,
+    cantidaddeletras+2
+]
+random.shuffle(respuesta3)
+raya()
+r3=input(f"Cuantas letras tiene la palabra '{palabrasrandom}'?\n[A]:{respuesta3[0]}\n[B]:{respuesta3[1]}\n[C]:{respuesta3[2]}\n[D]:{respuesta3[3]}\nSelecciona tus respuesta:")
+r3=r3.lower()
+if r3 in r:
+    if r3==r[respuesta3.index(cantidaddeletras)]:
+        raya()
+        correcto('Muy bien!    +1 punto.')
+        raya()
+    elif r3==r[respuesta3.index(cantidaddeletras+1)] or r3==r[respuesta3.index(cantidaddeletras-1)] or r3==r[respuesta3.index(cantidaddeletras+2)]:
+        raya()
+        incorrecto('Incorrecto!    -1 punto.\n    (Necesitas lente?...)')
+        raya()
+else:
+    raya()
+    incorrecto('No entiendo tus respuesta...   -1 punto.')
+    raya()
+
+contar(5)
+
+#ejercicio 4
+opciones_correctas4 = [
+    'Habían muchas personas en la fiesta.',
+    'La biblioteca está cerrado a las 6 pm.',
+    'El coche está estacionado en frente de la casa.',
+    'Ella no pudo encontrar ningun libro en la tienda.',
+    'Los niños estan jugando en el jardin.',
+    'El profesor no explicó bien el tema.',
+    'Los trenes se retrasa con frecuencia.',
+    'El gato está durmiendo sobre la cama.',
+    'La ventana está roto desde ayer.'
+]
+opciones_incorrectas4 = [
+    'Fuimos al cine y luego a cenar.',
+    'El niño tiene sueño y quiere ir a dormir.',
+    'Mi amiga vino a verme para que la ayudara con su tarea.',
+    'El perro ladra mucho en las noches.',
+    'Compré manzanas, naranjas y plátanos en el mercado.',
+    'Estudié para el examen, pero aún así me fue mal.',
+    'Ayer llovió durante toda la tarde.',
+    'Me gustaría aprender a tocar el piano.',
+    'El sol brilla intensamente en el verano.',
+    'No sé si debo ir al cine o quedarme en casa.',
+    'La computadora está encendida desde la mañana.',
+    'Tengo que llevar mi coche al taller.',
+    'Estoy leyendo un libro muy interesante.',
+    'Nos reunimos en el parque para hacer ejercicio.',
+    'Ayer tuve una conversación muy interesante con mi amigo.',
+    'El tren salió a tiempo de la estación.',
+    'Tengo que recordar comprar leche después del trabajo.',
+    'He decidido aprender un nuevo idioma.',
+    'La tienda estaba cerrada cuando llegué.'
+]
+
+opcion1=opciones_incorrectas4.pop(opciones_incorrectas4.index(random.choice(opciones_incorrectas4)))
+opcion2=opciones_incorrectas4.pop(opciones_incorrectas4.index(random.choice(opciones_incorrectas4)))
+opcion3=opciones_incorrectas4.pop(opciones_incorrectas4.index(random.choice(opciones_incorrectas4)))
+opcion4=random.choice(opciones_correctas4)
+
+respuesta4=[
+    opcion1,
+    opcion2,
+    opcion3,
+    opcion4
+]
+random.shuffle(respuesta4)
+raya()
+r4=input(f'Pregunta: ¿Cuál de las siguientes oraciones contiene un error gramatical o de uso de frases?\n[A]:{respuesta4[0]}\n[B]:{respuesta4[1]}\n[C]:{respuesta4[2]}\n[D]:{respuesta4[3]}\nSelecciona tus respuestas:')
+r4=r4.lower()
+if r4 in r:
+    if r4 ==r[respuesta4.index(opcion4)]:
+        raya()
+        correcto('Excelente!    +1 punto.')
+        raya()
+    elif r4==r[respuesta4.index(opcion1)] or r4==r[respuesta4.index(opcion2)] or r4==r[respuesta4.index(opcion3)]:
+        raya()
+        incorrecto('\nIncorrecto!    -1 punto.\n    (No hablas español...?)')
+        raya()
+else:
+    raya()
+    incorrecto('No entiendo tus respuesta...   -1 punto.')
+    raya()
+
+contar(5)
+
+#ejercicio 5
+numerorandom4=random.randint(70,120)
+numerorandom5=random.randint(120,140)
+resultadorandom3=numerorandom4+(numerorandom5*numerorandom5)+(numerorandom4*numerorandom5)
+diferencia1=resultadorandom3+1
+diferencia2=resultadorandom3+2
+diferencia3=resultadorandom3-1
+respuesta5=[
+    resultadorandom3,
+    diferencia1,
+    diferencia2,
+    diferencia3
+]
+raya()
+r5=input(f'El resultado de {numerorandom4}+{numerorandom5}*{numerorandom5}+({numerorandom4}*{numerorandom5}) es?\n[A]:{respuesta5[0]}\n[B]:{respuesta5[1]}\n[C]:{respuesta5[2]}\n[D]:{respuesta5[3]}\nSelecciona tus respuestas:')
+r5=r5.lower()
+if r5 in r:
+    if r5 ==r[respuesta5.index(resultadorandom3)]:
+        raya()
+        correcto('WOW!    +1 punto.')
+        raya()
+    elif r5==r[respuesta5.index(diferencia1)] or r5==r[respuesta5.index(diferencia2)] or r5==r[respuesta5.index(diferencia3)]:
+        raya()
+        incorrecto('Incorrecto!    -1 punto.\n    (¿Eres demasiado vago para usar una calculadora?)')
+        raya()
+else:
+    raya()
+    incorrecto('No entiendo tus respuesta...   -1 punto.')
+    raya()
+
+contar(5)
+
+#ejercicio 6
+correcta=4
+incorrecto1=random.randint(0,3)
+incorrecto2=random.randint(5,7)
+incorrecto3=random.randint(8,9)
+respuesta6=[incorrecto1,correcta,incorrecto2,incorrecto3]
+random.shuffle(respuesta6)
+raya()
+r6=input(f'¿Cuál es el dígito en la posición trescientos nueve después del punto decimal de pi?\n[A]:{respuesta6[0]}\n[B]:{respuesta6[1]}\n[C]:{respuesta6[2]}\n[D]:{respuesta6[3]}\nSelecciona tus respuesta:')
+r6=r6.lower()
+if r6 in r:
+    if r6==r[respuesta6.index(correcta)]:
+        raya()
+        correcto('¿Qué navegadores web estás usando?    +1 punto.')
+        raya()
+    elif r6==r[respuesta6.index(incorrecto1)] or r6==r[respuesta6.index(incorrecto2)] or r6 ==r[respuesta6.index(incorrecto3)]:
+        raya()
+        incorrecto('Incorrecto!    -1 punto.\n    (¿Ahora eres vago de usar navegadores web...?)')
+        raya()
+else:
+    raya()
+    incorrecto('No entiendo tus respuesta...   -1 punto.')
+    raya()
+
+contar(5)
+
+#ejercicio 7
+raya()
+r7=input('La Segunda Guerra Mundial comenzó el 1 de septiembre de 1938.\n[V]:falso\n[F]:verdadero\nSelecciona tus respuesta:')
+r7=r7.lower()
+if r7 in rs:
+    if r7=='v':
+        raya()
+        correcto('Bien!    +1 punto.')
+        raya()
+    elif r7=='f':
+        raya()
+        incorrecto('Incorrecto!    -1 punto.\n    (Leas bien por favor.)')
+        raya()
+else:
+    raya()
+    incorrecto('No entiendo tus respuesta...   -1 punto.')
+    raya()
+
+contar(5)
+
+#ejercicio 8
+causas=[
+    'Consumo excesivo de chocolate',
+    'Uso excesivo de redes sociales',
+    'Crisis económica',
+    'Conducción excesiva',
+    'Conducción excesiva',
+    'Calentamiento global',
+    'Desarrollo tecnológico rápido',
+    'Actividades humanas',
+    'Fallas en Internet',
+    'Conflictos políticos',
+    'Invasiones alienígenas',
+]
+causas1=[
+    'Impacto de un asteroide',
+    'Actividad volcánica masiva',
+    'Colapso de la cadena alimentaria',
+    'Cambios en el nivel del mar']
+opcion5=causas.pop(causas.index(random.choice(causas)))
+opcion6=causas.pop(causas.index(random.choice(causas)))
+opcion7=causas.pop(causas.index(random.choice(causas)))
+opcion8=random.choice(causas1)
+respuesta8=[
+    opcion5,
+    opcion6,
+    opcion7,
+    opcion8
+]
+random.shuffle(respuesta8)
+raya()
+r8=input(f'¿Qué causó la extinción de los dinosaurios? Por favor, selecciona las opciones más razonables.\n[A]:{respuesta8[0]}\n[B]:{respuesta8[1]}\n[C]:{respuesta8[2]}\n[D]:{respuesta8[3]}\nSelecciona tus respuestas:')
+r8=r8.lower()
+if r8 in r:
+    if r8 ==r[respuesta8.index(opcion8)]:
+        raya()
+        correcto('Sigue asi!    +1 punto.')
+        raya()
+    elif r8 ==r[respuesta8.index(opcion5)] or r8 ==r[respuesta8.index(opcion6)] or r8 ==r[respuesta8.index(opcion7)]:
+        raya()
+        incorrecto('Incorrecto!    -1 punto.\n    (Puede ser, pero nunca.)')
+        raya()
+else:
+    raya()
+    incorrecto('No entiendo tus respuesta...   -1 punto.')
+    raya()
+
+contar(5)
+
+#ejercicio 9
+descripcion=[
+    'Silicosis volcánica',
+    'Enfermedad pulmonar ultramicroscópica del polvo volcánico silíceo',
+    'Pneumonoultramicros',
+    'Pneumonoultramicroscopicsilicovolcanoconiosis',
+    'Pneumonoultramicroscopicsillicovolcanoconiosi',
+    'Pneumonoultramicroscopicsilicovolcancoiosis',
+    'Pneumonoultramicroscopicsilicovolcanoconiosis',
+    'Pneumonoultramicroscopicsilicovolcanoicosis',
+    'Pneumonoultramicroscopicsilicoovolcanoconiosis',
+    'Pneumonoultramicroscopicsillicovolcanoiosis',
+    'Pneumonoultramicroscopicsilicovlcanoconiosis',
+    'Pneumonoultramicroscopicsilico-volcanoconiosis',
+    'Pneumonoultramicroscopicsilivolcanoconiosis']
+
+palabracorrecta='Pneumonoultramicroscopicsilicovolcanoconiosis'
+opcion9=descripcion.pop(descripcion.index(random.choice(descripcion)))
+opcion10=descripcion.pop(descripcion.index(random.choice(descripcion)))
+opcion11=descripcion.pop(descripcion.index(random.choice(descripcion)))
+
+respuesta9=[
+    palabracorrecta,
+    opcion9,
+    opcion10,
+    opcion11
+]
+random.shuffle(respuesta9)
+raya()
+r9=input(f'Hay una enfermedad ficticia que supuestamente es causada por la inhalación de cenizas y polvo muy finos, ¿sabes cuál es?\n[A]:{respuesta9[0]}\n[B]:{respuesta9[1]}\n[C]:{respuesta9[2]}\n[D]:{respuesta9[3]}\nSelecciona tus respuesta:')
+r9=r9.lower()
+if r9 in r:
+    if r9==r[respuesta9.index(palabracorrecta)]:
+        raya()
+        correcto('Sabes mucho...    +1 punto.')
+        raya()
+    elif r9==r[respuesta9.index(opcion9)] or r9==r[respuesta9.index(opcion10)] or r9==r[respuesta9.index(opcion11)]:
+        raya()
+        incorrecto('Incorrecto!   -1 punto.\n    (Jaja.)')
+        raya()
+else:
+    raya()
+    incorrecto('No entiendo tus respuesta...   -1 punto.')
+    raya()
+
+contar(5)
+
+#ejercicio 10
+nombre=['Galileo Galilei','Albert Einstein']
+frase='¿Qué diablo estás hablando?'
+nombre1='Issac Newton'
+opcion12=nombre.pop(nombre.index(random.choice(nombre)))
+opcion13=nombre.pop(nombre.index(random.choice(nombre)))
+respuesta10=[
+    opcion12,
+    opcion13,
+    frase,
+    nombre1
+]
+random.shuffle(respuesta10)
+raya()
+r10=input(f'是谁发现了万有引力的定律?\n[A]:{respuesta10[0]}\n[B]:{respuesta10[1]}\n[C]:{respuesta10[2]}\n[D]:{respuesta10[3]}\nSelecciona tus respuesta:')
+r10=r10.lower()
+if r10 in r:
+    if r10==r[respuesta10.index(nombre1)]:
+        raya()
+        correcto('真棒！    +1 punto.')
+        raya()
+    elif r10==r[respuesta10.index(frase)]:
+        raya()
+        incorrecto('Incorrecto!    -1 punto.\n    (Chino.)')
+        raya()
+    elif r10==r[respuesta10.index(opcion12)] or r10==r[respuesta10.index(opcion13)]:
+        raya()
+        incorrecto('Incorrecto!    -1 punto.\n    (A veces, aprendete una nueva idioma es un beneficio.)')
+        raya()
+else:
+    raya()
+    incorrecto('No entiendo tus respuesta...   -1 punto.')
+    raya()
+
+contar(5)
+
+#ejercicio 11
+parecida=[
+    '... .. . - .',
+    '... .. - . - .',
+    '... .. . . - .',
+    '... .. . - . .',
+    '... .. - .',
+    '... .. . - . --',
+    '... .. . - . .....'
+]
+numeros=[
+    '.---- -.--. ---',
+    '-.. --- ...',
+    '- .-. . ...',
+    '-.-. ..- .- - .-. ---',
+    '-.-. .. -. -.-. ---',
+    '... . .. ...',
+    '--- -.-. .... ---',
+    '-.. -.--. ...- .',
+    '-.. .. . --..'
+]
+siete='... .. . - .'
+opcion14=parecida.pop(parecida.index(random.choice(parecida)))
+opcion15=parecida.pop(parecida.index(random.choice(parecida)))
+opcion16=numeros.pop(numeros.index(random.choice(numeros)))
+respuesta11=[
+    opcion14,
+    opcion15,
+    opcion16,
+    siete
+]
+random.shuffle(respuesta11)
+raya()
+r11=input(f'-.-. ..- .- -. - .- ... -.. .. .- ... - .. . -. . ..- -. .- ... . -- .- -. .-\n[A]:{respuesta11[0]}\n[B]:{respuesta11[1]}\n[C]:{respuesta11[2]}\n[D]:{respuesta11[3]}\nSelecciona tus respuesta:')
+r11=r11.lower()
+if r11 in r:
+    if r11==r[respuesta11.index(siete)]:
+        raya()
+        correcto('. -..- -.-. . .-.. . -. - .    +1 puntos.')
+        raya()
+    elif r11==r[respuesta11.index(opcion14)] or r11==r[respuesta11.index(opcion15)] or r11==r[respuesta11.index(opcion16)]:
+        raya()
+        incorrecto('.. -. -.-. --- .-. .-. . -.-. - ---    -1 punto.\n    (JijiJajaJiji)')
+        raya()
+else:
+    raya()
+    incorrecto('No entiendo tus respuesta...   -1 punto.')
+    raya()
+
+time.sleep(3)
+print('\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n')
+time.sleep(2)
+
+raya()
+print(f'Ya no hay mas ejercicios!\n')
+raya()
+time.sleep(2)
+print('\n\n\n\n\n\n\n\n\n')
+raya()
+print('Vamos a calcular tus punto!')
+raya()
+time.sleep(3)
+j=1
+k=9999
+while j<10:
+    k*=99999999999999
+    print(bin(k))
+    j+=1
+
+time.sleep(2.5)
+print('\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n')
+time.sleep(2.5)
+print(f'Tus punto es:{p}/11')
+time.sleep(1)
+print('.')
+time.sleep(1)
+print('.')
+time.sleep(1)
+print('.')
+time.sleep(1)
+print('.')
+time.sleep(1)
+print('.')
+if p==11:
+    print('Felicidades, tramposo.')
+elif p>7:
+    print('Wow, eres un genio.')
+elif p<7 and p>4:
+    print('Bien hecho!')
+elif p>-1 and p<4:
+    print('Necesitas mas esfuerzo.')
+elif p<-1:
+    print('Creo que estas en la carrera equivocada.')
+time.sleep(2)
+raya()
+print('Veremos de luego!')
+raya()
+
