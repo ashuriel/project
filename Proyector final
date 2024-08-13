@@ -523,12 +523,12 @@ raya()
 time.sleep(3)
 j=1
 k=9999
-while j<10:
+while j<20:
     k*=99999999999999
     print(bin(k))
     j+=1
 
-time.sleep(2.5)
+
 print('\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n')
 time.sleep(2.5)
 print(f'Tus punto es:{p}/11')
